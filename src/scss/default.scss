@@ -1,6 +1,9 @@
 @import "font-awesome";
 @import "bootstrap";
 
+.rowoff td, .rowoff th{
+	background-color: #808080;
+}
 
 .navbar {
 	background-color: #252525;

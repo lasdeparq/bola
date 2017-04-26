@@ -1,12 +1,12 @@
 {
-  "name": "gulpbasic",
+  "name": "bola",
   "description": "",
-  "main": "gulpfile.js",
+  "main": "src/index.html",
   "authors": [
     "André Lacerda da Silva <lasdeparq@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/lasdeparq/frontend_voffice",
+  "homepage": "https://github.com/lasdeparq/bola",
   "ignore": [
     "**/.*",
     "node_modules",

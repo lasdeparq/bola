@@ -1,11 +1,46 @@
 @import "font-awesome";
 @import "bootstrap";
 
-.rowoff td, .rowoff th{
-	background-color: #808080;
+/*Variáveis*/
+$bgcolor: #efeffe;
+$divcolor: #ffffff;
+
+$shadow-hoffset: 2px;
+$shadow-voffset: 2px;
+$shadow-blur: 6px;
+$shadow-spread: 1px;
+$shadow-color: rgba(0, 0, 0, .2);
+
+@mixin box-shadow {
+	-webkit-box-shadow: $shadow-hoffset $shadow-voffset $shadow-blur $shadow-spread $shadow-color;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  	-moz-box-shadow: $shadow-hoffset $shadow-voffset $shadow-blur $shadow-spread $shadow-color;  /* Firefox 3.5 - 3.6 */
+  	box-shadow: $shadow-hoffset $shadow-voffset $shadow-blur $shadow-spread $shadow-color;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  	/*box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];*/
+}
+
+body {
+	background-color: $bgcolor;
+}
+
+.rowoff { 
+	td, th {
+		background-color: #808080;
+	}	
 }
 
 .navbar {
 	background-color: #252525;
 	border-radius: 0px;
+}
+
+.calendar {
+	@include box-shadow;
+	margin: 20px;
+	background-color: $divcolor;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	margin: 0px 0px 2px 5px;
 }

@@ -17,6 +17,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jQuery": "^3.1.1",
-    "bootstrap-sass": "^3.3.7"
+    "bootstrap-sass": "^3.3.7",
+    "vue": "^2.3.2"
   }
 }

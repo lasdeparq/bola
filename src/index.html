@@ -181,10 +181,23 @@
 		</tbody>
 	</table>
 </section>
-<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
-<script type="text/javascript" src="js/bootstrap/boostrap.min.js"></script>
+<div id="app">
+	<p v-if="show">{{ text }}</p>
+</div>
 <footer class="footer">
 	&#xae; Lacerda Development. All rights reserved.
 </footer>
 </body>
+<script type="text/javascript" src="js/bootstrap/boostrap.min.js"></script>
+<script type="text/javascript" src="js/vue/vue.min.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			text: "HEllo Vue!",
+			show: true
+		}
+	});
+</script>
 </html>

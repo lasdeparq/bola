@@ -27,7 +27,9 @@ gulp.task('assets',function() {
       .pipe( gulp.dest('./dist/images/'));
     gulp.src('bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js')
       .pipe( gulp.dest('./dist/js/bootstrap/')); 
-    gulp.src('./dist').pipe(connect.reload());     
+    gulp.src('bower_components/vue/dist/vue.min.js')      
+      .pipe( gulp.dest('./dist/js/vue/'));
+    gulp.src('./dist').pipe(connect.reload());    
 });
 
 // Compiles sass

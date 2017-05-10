@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<title>Gilsão Esportes!</title>
 	<link rel="stylesheet" type="text/css" href="css/default.css">
@@ -38,7 +39,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<section class="calendar container-fluid">
+<section class="calendar container-fluid hidden">
 	<table class="table table-striped">
 		<thead>
 			<tr><th class="text-center text-uppercase" colspan="8">Horários no Gilsão</th></tr>
@@ -181,9 +182,9 @@
 		</tbody>
 	</table>
 </section>
-<div id="app">
-	<p v-if="show">{{ text }}</p>
-</div>
+<section id="app" class="calendar container-fluid hidden" v-for="">
+	
+</section>
 <footer class="footer">
 	&#xae; Lacerda Development. All rights reserved.
 </footer>
@@ -192,11 +193,36 @@
 <script type="text/javascript" src="js/vue/vue.min.js"></script>
 <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 <script>
-	var app = new Vue({
+	
+	const optionsFullDate = {
+  		year: 'numeric', month: 'numeric', day: 'numeric',
+  		hour: 'numeric', minute: 'numeric', second: 'numeric',
+  		hour12: false
+	};
+
+	const optionsOnlyTime = {
+  		hour: 'numeric', minute: 'numeric', second: 'numeric',
+  		hour12: false
+	};
+
+	const dateFormatter = new Intl.DateTimeFormat('pt-BR', optionsFullDate);
+
+	let match = {
+		owner: "André Lacerda",
+		beginDate: new Date(2017,5,8,20,0,0),
+		duration: 1
+	};
+
+	const availableDaySchedule = {
+		times: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
+	};
+
+	const app = new Vue({
 		el: '#app',
 		data: {
 			text: "HEllo Vue!",
-			show: true
+			match: match,
+			times: availableDaySchedule.times
 		}
 	});
 </script>
